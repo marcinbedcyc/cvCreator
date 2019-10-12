@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<ScrollPane fitToWidth="true" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MainWindowController">
+   <content>
+      <VBox fx:id="mainBox" alignment="CENTER" maxHeight="1020.0" prefHeight="950.0">
+         <children>
+            <Label text="CV CREATOR">
+               <font>
+                  <Font size="60.0" />
+               </font>
+            </Label>
+            <HBox alignment="CENTER" prefWidth="1000.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <VBox alignment="TOP_CENTER" prefHeight="600.0" prefWidth="300.0" spacing="5.0" HBox.hgrow="SOMETIMES">
+                     <children>
+                        <HBox alignment="CENTER">
+                           <children>
+                              <VBox alignment="CENTER" spacing="15.0">
+                                 <children>
+                                    <ImageView fx:id="imageView" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../man.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Button fx:id="imageChoserButton" mnemonicParsing="false" onAction="#choseImage" text="Wybierz zdjęcie" />
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="20.0" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <Label fx:id="pathLabel" alignment="CENTER" contentDisplay="CENTER" prefWidth="1000.0" text="Scieżka katalogu" VBox.vgrow="ALWAYS">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Button fx:id="chosePathButton" mnemonicParsing="false" onAction="#chosePath" text="Wybierz katalog" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <TextField fx:id="nameTextField" prefWidth="384.0" promptText="imię" />
+                        <TextField fx:id="surnameTextField" promptText="nazwisko" />
+                        <TextField fx:id="emailTextField" promptText="e-mail" />
+                        <TextField fx:id="streetTextField" promptText="ulica" />
+                        <HBox spacing="100.0">
+                           <children>
+                              <TextField fx:id="houseNumberTextField" promptText="numer domu" HBox.hgrow="SOMETIMES" />
+                              <TextField fx:id="houseLetterTextField" promptText="litera domu *" HBox.hgrow="SOMETIMES" />
+                           </children>
+                        </HBox>
+                        <TextField fx:id="flatNumberTextField" promptText="numer mieszkania *" />
+                        <TextField fx:id="postCodedTextField" promptText="kod pocztowy" />
+                        <TextField fx:id="cityTextField" promptText="miejscowość" />
+                        <DatePicker fx:id="birthDatePicker" promptText="data urodzenia" />
+                        <TextField fx:id="phoneNumberTextField" promptText="numer telefonu" />
+                        <TextArea fx:id="shortInfoTextArea" minHeight="75.0" prefHeight="50.0" prefWidth="200.0" promptText="Krótka informacja o sobie (motto, cele życiowe, plany itd.) *" wrapText="true" />
+                        <Label prefWidth="1000.0" text="* - pola nieobowiązkowe" VBox.vgrow="ALWAYS" />
+                        <HBox alignment="CENTER" spacing="10.0">
+                           <children>
+                              <VBox fx:id="skillsVBox" prefHeight="200.0" prefWidth="100.0" spacing="5.0" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <Label text="Umiejętności:">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                              <Button fx:id="addSkillButton" mnemonicParsing="false" onAction="#addSkill" text="Dodaj" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" spacing="10.0">
+                           <children>
+                              <VBox fx:id="interestsVBox" prefHeight="175.0" prefWidth="310.0" spacing="5.0" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <Label text="Zainteresowania:">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                              <Button fx:id="addInterestButton" mnemonicParsing="false" onAction="#addInterest" text="Dodaj" />
+                           </children>
+                        </HBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="20.0" />
+                     </padding>
+                  </VBox>
+                  <VBox alignment="TOP_CENTER" prefHeight="600.0" prefWidth="300.0" spacing="5.0" HBox.hgrow="SOMETIMES">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                           <children>
+                              <VBox fx:id="experienceVBox" prefHeight="200.0" prefWidth="100.0" spacing="5.0" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <Label prefHeight="16.0" text="Doświadczenie:" VBox.vgrow="ALWAYS">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                              <Button fx:id="addExperienceButton" mnemonicParsing="false" onAction="#addExperience" text="Dodaj" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                           <children>
+                              <VBox fx:id="educationVbox" prefHeight="200.0" prefWidth="100.0" spacing="5.0" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <Label text="Edukacja:">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                              <Button fx:id="addEducationButton" mnemonicParsing="false" onAction="#addEducation" text="Dodaj" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                           <children>
+                              <VBox fx:id="coursesVbox" prefHeight="200.0" prefWidth="100.0" spacing="5.0" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <Label text="Kursy:">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                              <Button fx:id="addCourseButton" mnemonicParsing="false" onAction="#addCourse" text="Dodaj" />
+                           </children>
+                        </HBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </padding>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" spacing="100.0">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+               <children>
+                  <Button fx:id="okButton" alignment="CENTER" mnemonicParsing="false" onAction="#generateCV" prefHeight="35.0" prefWidth="150.0" text="Generuj" textAlignment="CENTER" />
+                  <Button fx:id="openButton" disable="true" mnemonicParsing="false" onAction="#openCV" prefHeight="35.0" prefWidth="150.0" text="Otwórz" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </content>
+</ScrollPane>

@@ -1,19 +1,23 @@
-import java.time.LocalDate;
-import java.time.Month;
+import controllers.MainWindowController;
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
-public class Main {
+public class Main extends Application{
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+        FXMLLoader laoder = new FXMLLoader(getClass().getResource("/fxml/mainWindow.fxml"));
+        Parent root = laoder.load();
+        MainWindowController controller = laoder.getController();
+        controller.setHostServices(getHostServices());
+        primaryStage.setScene(new Scene(root, 1000, 1000));
+        primaryStage.setResizable(true);
+        primaryStage.show();
+    }
+
     public static void main(String[] args) {
-        Person cvMaker = new Person();
-        cvMaker.setName("Marcin");
-        cvMaker.setSurname("Kowalski");
-        cvMaker.setPhoneNumber(123456789);
-        cvMaker.setEmailAddress("komarcki@gmail.com");
-        String [] interests = {"Piłka nożna", "Programowanie", "Java", "Gotowanie"};
-        cvMaker.setInterest(interests);
-        String [] skills = {"Umiejętność1", "Umiejętność2", "Umiejętność3", "Umiejętność4"};
-        cvMaker.setSkills(skills);
-        cvMaker.setShortInfo("Jestem studentem, poszukuję stażu, aby móc stale się rozwijać.");
-        cvMaker.setDateOfBirth(LocalDate.of(1998, Month.JANUARY, 2));
-        cvMaker.setAddress(new Address("Polna", 2, 3,"87-114", "Warszawa"));
+        launch(args);
     }
 }
